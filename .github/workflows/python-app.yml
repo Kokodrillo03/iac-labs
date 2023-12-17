@@ -128,7 +128,7 @@ jobs:
           poetry run task security
 
   tests:
-    needs: build
+    needs: [lint, formatter, security]
     strategy:
       matrix:
         os: ["ubuntu-latest", "windows-latest"]
